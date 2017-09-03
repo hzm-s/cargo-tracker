@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/haazime/activerecord_easy_type.git
+  revision: 0360b7cf5da1453559bd564f1f3c1a1436bf0443
+  specs:
+    activerecord_easy_type (0.1.1)
+      activerecord (~> 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -187,6 +194,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord_easy_type!
   bootstrap (~> 4.0.0.beta)
   byebug
   coffee-rails (~> 4.2)

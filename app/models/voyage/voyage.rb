@@ -1,6 +1,8 @@
 module Voyage
   class Voyage < ApplicationRecord
     attr_accessor :schedule
+
+    NONE = new(voyage_number: VoyageNumber.new(''), schedule: Schedule::EMPTY)
   end
 
   class Voyage

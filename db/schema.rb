@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170903004845) do
+ActiveRecord::Schema.define(version: 20170904071202) do
+
+  create_table "cargo_cargos", force: :cascade do |t|
+    t.string "tracking_id", null: false
+    t.integer "origin_id", null: false
+    t.integer "spec_origin_id", null: false
+    t.integer "spec_destination_id", null: false
+    t.date "spec_arrival_deadline", null: false
+    t.string "transport_status", null: false
+    t.integer "current_voyage_id"
+    t.integer "last_known_location_id"
+    t.boolean "misdirected", null: false
+    t.string "routing_status", null: false
+    t.datetime "calculated_at", null: false
+    t.boolean "unloaded_at_dest", null: false
+  end
 
   create_table "cargo_legs", force: :cascade do |t|
     t.integer "cargo_cargo_id", null: false
@@ -22,6 +37,18 @@ ActiveRecord::Schema.define(version: 20170903004845) do
     t.integer "leg_index", null: false
     t.index ["cargo_cargo_id"], name: "index_cargo_legs_on_cargo_cargo_id"
     t.index ["voyage_voyage_id"], name: "index_cargo_legs_on_voyage_voyage_id"
+  end
+
+  create_table "handling_handling_events", force: :cascade do |t|
+    t.integer "cargo_cargo_id", null: false
+    t.integer "voyage_voyage_id", null: false
+    t.integer "location_location_id", null: false
+    t.string "type", null: false
+    t.datetime "completion_time", null: false
+    t.datetime "registration_time", null: false
+    t.index ["cargo_cargo_id"], name: "index_handling_handling_events_on_cargo_cargo_id"
+    t.index ["location_location_id"], name: "index_handling_handling_events_on_location_location_id"
+    t.index ["voyage_voyage_id"], name: "index_handling_handling_events_on_voyage_voyage_id"
   end
 
   create_table "location_locations", force: :cascade do |t|

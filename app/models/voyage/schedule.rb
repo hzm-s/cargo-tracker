@@ -1,3 +1,5 @@
 module Voyage
-  Schedule = Struct.new(:carrier_movements)
+  class Schedule < Struct.new(:carrier_movements)
+    EMPTY = new([])
+  end
 end
