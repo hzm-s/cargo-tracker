@@ -1,11 +1,5 @@
 require 'rails_helper'
 
-HONGKONG = Location::Location.new(un_locode: Location::UnLocode.new('CNHKG'), name: 'HongKong')
-TOKYO = Location::Location.new(un_locode: Location::UnLocode.new('JPTKO'), name: 'Tokyo')
-NEWYORK = Location::Location.new(un_locode: Location::UnLocode.new('USNYC'), name: 'New York')
-DALLAS = Location::Location.new(un_locode: Location::UnLocode.new('USDAL'), name: 'Dallas')
-CHICAGO = Location::Location.new(un_locode: Location::UnLocode.new('USCHI'), name: 'Chicago')
-
 describe Cargo::RouteSpecification do
   let(:hong_kong__tokyo__new_york) do
     Voyage::Voyage::Builder
@@ -53,7 +47,7 @@ describe Cargo::RouteSpecification do
 
   it do
     route_specification =
-      Cargo::RouteSpecification.new(nil, CHICAGO, Date.new(2017,3,1))
+      Cargo::RouteSpecification.new(HANGZOU, CHICAGO, Date.new(2017,3,1))
     expect(route_specification).to_not be_satisfied_by(itinerary)
   end
 

@@ -3,8 +3,8 @@ module Cargo
 
     def satisfied_by?(itinerary)
       itinerary &&
-        origin&.same_identity_as(itinerary.initial_departure_location) &&
-        destination&.same_identity_as(itinerary.final_arrival_location) &&
+        origin.same_identity_as(itinerary.initial_departure_location) &&
+        destination.same_identity_as(itinerary.final_arrival_location) &&
         arrival_deadline >= itinerary.final_arrival_date
     end
   end

@@ -54,3 +54,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
+gem 'activerecord_easy_type', github: 'haazime/activerecord_easy_type'
